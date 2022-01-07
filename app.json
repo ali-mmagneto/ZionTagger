@@ -1,18 +1,18 @@
 {
-  "name": "Frozen Tagger Bot",
-  "logo":"https://telegra.ph/file/133b9125da464d1db6fca.jpg",
-  "description": "Frozen Tagger ÜCRETSİZ ŞEKILDE GRUBUNUZDA ÜYELERI ETIKETLEYE BILIR.",
+  "name": "Tagger Bot",
+  "logo":"https://telegra.ph/QUİCKWASTE-FOTO-10-29",
+  "description": "@alitaggerBot ÜCRETSİZ ŞEKILDE GRUBUNUZDA ÜYELERI ETIKETLEYE BILIR.",
   "env": {
     "TOKEN": {
-      "description": "@botfather Vasitesi ile Ala Bilersen(Gerekli)",
+      "description": "@botfather ile Alavilirsin(Gerekli)",
       "value": ""
     },
     "APP_ID": {
-      "description": " my.telegram.org vasitesi ile ala bilersen (Gerekli)",
+      "description": " my.telegram.org vasitesi alabilirsin (Gerekli)",
       "value": ""
     },
     "API_HASH": {
-      "description": "my.telegram.org Vasitesi ile ala bilersen (Gerekli)",
+      "description": "my.telegram.org ile alabilirsin (Gerekli)",
       "value": ""
     }
   },
