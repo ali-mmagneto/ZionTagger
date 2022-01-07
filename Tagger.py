@@ -98,7 +98,7 @@ async def mentionall(event):
     if msg == None:
         return await event.respond("**Geçmiş mesajlar için etiket ede bilmiom**")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("Etiket Yapmak için sebeb yok❗️")
+    return await event.respond("Etiket Yapmak için sebep yok❗️")
   else:
     return await event.respond("**Etikete Başlamak için sebeb yazın...!**")
   
@@ -110,7 +110,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{random.choice(emoji)}](tg://user?id={usr.id}) "
       if event.chat_id not in emoji_calisan:
-        await event.respond("** Etiket işlemi başarıyla durduruldu❌**")
+        await event.respond("**Etiket işlemi başarıyla durduruldu❌**")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
@@ -153,7 +153,7 @@ async def mentionall(event):
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu komutu sadace yoneticiler kullanabilir🤥**")
+    return await event.respond("**Bu komutu sadace yoneticiler kullanabilir ¯\_(ツ)_/¯**")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -218,7 +218,7 @@ async def mentionall(event):
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu komutu sadace yoneticiler kullanabilir〽**")
+    return await event.respond("**Bu komutu sadace yoneticiler kullanabilir ¯\_(ツ)_/¯`**")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -274,43 +274,23 @@ async def cancel(event):
 	
 
 
-@Client.on(events.NewMessage(pattern='^(?i)/admins')
-async def tag_admins(c: Client, m: Message):
+@client.on(events.NewMessage(pattern="^/admins ?(.*)"))
+async def mentionall(tagadmin):
 
-    adminslist = []
+	if tagadmin.pattern_match.group(1):
+		seasons = tagadmin.pattern_match.group(1)
+	else:
+		seasons = ""
 
-    if m.chat.type in ("supergroup", "group"):
-        async for member in c.iter_chat_members(m.chat.id, filter="administrators"):
-            adminslist.append(member.user.id)
-
-        if m.from_user.id in adminslist:
-            # Don't work if called by an admin himself and log this!
-            LOGGER.info(
-                f"Called by admin: {m.from_user.name} ({m.from_user.id}) in Chat: {m.chat.title} ({m.chat.id})"
-            )
-            return
-
-        mentions = "Hey **{}** Adminler, bakın buraya,!"
-        admin_count = 0
-
-        async for a in alladmins:
-            if a.user.is_bot:
-                pass
-            else:
-                admin_count += 1
-                adminid = a.user.id
-                mentions += f"[\u2063](tg://user?id={adminid})"
-
-        text = mentions.format(admin_count)
-        text += f"\n[{m.from_user.first_name}](tg://user?id={m.from_user.id}) is calling you!"
-        await m.reply_text(text, parse_mode="markdown")
-
-    else:
-        await m.reply_text(
-            "`It doesn't work here ¯\_(ツ)_/¯`",
-            parse_mode="markdown",
-            reply_to_message_id=m.message_id,
-        )
+	chat = await tagadmin.get_input_chat()
+	a_=0
+	await tagadmin.delete()
+	async for i in client.iter_participants(chat, filter=admin):
+		if a_ == 500:
+			break
+		a_+=5
+		await tagadmin.client.send_message(tagadmin.chat_id, "**[{}](tg://user?id={}) {}**".format(i.first_name, i.id, seasons))
+		sleep(0.5)
 
 
 print(">> Bot çalıyor merak etme 🚀 @mmagneto bilgi alabilirsin <<")
