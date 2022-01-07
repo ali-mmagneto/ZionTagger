@@ -30,35 +30,35 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("**🌀LuciTaggerBot**\n ile Grubunuzdakı Nerdeyse Tüm Üyelere Etiket Ata bilirim \nKomutlar için =======> /help yazın**",
+  await event.reply("**AliTaggerBot**\n ile Grubunuzdakı Tüm Üyelere Etiket Atabilirsiniz \nKomutlar için /help yazın**",
                     buttons=(
                    
-		      [Button.url('Beni Gruba Ekle ➕', 'https://t.me/lucitaggerbot?startgroup=a')],
-                      [Button.url('Support🛠', 'https://t.me/LuciSup')],
-                      [Button.url('Resmi Kanal📣', 'https://t.me/LuciBots')],
-		      [Button.url('Developer👨🏻‍💻', 'https://t.me/LuciMarka')],
+		      [Button.url('Beni Gruba Ekle ➕', 'https://t.me/alitaggerbot?startgroup=a')],
+                      [Button.url('Support🛠', 'https://t.me/mmagneto')],
+                      [Button.url('Resmi Kanal📣', 'https://t.me/mmagneto2')],
+		      [Button.url('Developer👨🏻‍💻', 'https://t.me/mmagneto')],
                     ),
                     link_preview=False
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**🌀 LuciTaggerBot Komutları**\n\n**/tag <sebeb> - 5-li Etiket Atar**\n\n**/etag <sebeb> - Emoji ile etiketler**\n\n**/tektag sebeb - Üyeleri Tek Tek Etiketler**\n\n**/admins sebeb - Yöneticileri Tek Tek Tag Eder**\n\n**/start - botu başlatır**"
+  helptext = "**AliTaggerBot Komutları**\n\n**/tag <sebeb> - 5-li Etiket Atar**\n\n**/etag <sebeb> - Emoji ile etiketler**\n\n**/tektag sebeb - Üyeleri Tek Tek Etiketler**\n\n**/admins sebeb - Yöneticileri Tek Tek Tag Eder**\n\n**/start - botu başlatır**"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('Beni Gruba Ekle➕', 'https://t.me/lucitaggerbot?startgroup=a')],
-                      [Button.url('Support👨‍💻', 'https://t.me/LuciSup')],
-                      [Button.url('Resmi Kanal🔖', 'https://t.me/LuciBots')],
-		      [Button.url('Developer🧑‍🔧', 'https://t.me/LuciMarka')],
+                      [Button.url('Beni Gruba Ekle➕', 'https://t.me/alitaggerbot?startgroup=a')],
+                      [Button.url('Support👨‍💻', 'https://t.me/mmagneto')],
+                      [Button.url('Resmi Kanal🔖', 'https://t.me/mmagneto3')],
+		      [Button.url('Developer🧑‍🔧', 'https://t.me/mmagneto')],
                     ),
                     link_preview=False
                    )
 	
 @client.on(events.NewMessage(pattern="^/reklam$"))
 async def help(event):
-  helptext = "**Çok özellikleri Etiket Botu Bulmaya Çalışan Grub Sahibleri @LuciTaggerBot Size Göre:\n\n📌 5-li etiket\n📌 Emoji etiket\n📌 Tekli Etiket\n📌 Yalnız Yöneticileri etiketleme\n📌\n\n Böyle Çok özellikli @LuciTaggerBot 'u grubunuza yönetici olarak ekleyip rahatlıkla üyelir , etiket ata bilirsiz **"
+  helptext = "**Etiket Botu Bulmaya Çalışan Grup Sahibleri @aliTaggerBot imdatınıza yetişti:\n\n 5-li etiket\n Emoji etiket\n Tekli Etiket\n Yalnız Yöneticileri etiketleme\n\n\n Böyle Çok özellikli @aliTaggerBot 'u grubunuza yönetici olarak ekleyip rahatlıkla üyelerinize etiket atabilirsiz **"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('Botu Gruba Ekle➕', 'https://t.me/lucitaggerbot?startgroup=a')],
+                      [Button.url('Botu Gruba Ekle➕', 'https://t.me/alitaggerbot?startgroup=a')],
                     ),
                     link_preview=False
                    )
@@ -87,7 +87,7 @@ async def mentionall(event):
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu komutu sadace yoneticiler kullana bilir〽️**")
+    return await event.respond("**Bu komutu sadace yoneticiler kullanabilir〽️**")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -293,5 +293,5 @@ async def mentionall(tagadmin):
 		sleep(0.5)
 
 
-print(">> Bot çalıyor merak etme 🚀 @lucimarka bilgi alabilirsin <<")
+print(">> Bot çalıyor merak etme 🚀 @mmagneto bilgi alabilirsin <<")
 client.run_until_disconnected()
