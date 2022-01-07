@@ -30,12 +30,12 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("**AliTaggerBot**\n ile Grubunuzdakı Tüm Üyelere Etiket Atabilirsiniz \nKomutlar için /help yazın**",
+  await event.reply("**AliTaggerBot**\n ile Grubunuzdakı Tüm Üyelere Etiket Atabilirsiniz \nKomutlar için /help yazın",
                     buttons=(
                    
 		      [Button.url('Beni Gruba Ekle ➕', 'https://t.me/alitaggerbot?startgroup=a')],
                       [Button.url('Support🛠', 'https://t.me/mmagneto')],
-                      [Button.url('Resmi Kanal📣', 'https://t.me/mmagneto2')],
+                      [Button.url('Resmi Kanal📣', 'https://t.me/mmagneto3')],
 		      [Button.url('Developer👨🏻‍💻', 'https://t.me/mmagneto')],
                     ),
                     link_preview=False
