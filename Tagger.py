@@ -285,7 +285,7 @@ async def mentionall(tagadmin):
 	chat = await tagadmin.get_input_chat()
 	a_=0
 	await tagadmin.delete()
-	async for i in client.iter_participants(chat, filter=cp):
+	async for i in client.iter_participants(chat, filter=admin):
 		if a_ == 500:
 			break
 		a_+=5
