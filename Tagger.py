@@ -42,7 +42,7 @@ async def start(event):
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**AliTaggerBot Komutları**\n\n**/tag <sebeb> - 5-li Etiket Atar**\n\n**/etag <sebeb> - Emoji ile etiketler**\n\n**/tektag sebeb - Üyeleri Tek Tek Etiketler**\n\n**/admins sebeb - Yöneticileri Tek Tek Tag Eder**\n\n**/start - botu başlatır**"
+  helptext = "**AliTaggerBot Komutları**\n\n**/tag <sebep> - 5-li Etiket Atar**\n\n**/etag <sebep> - Emoji ile etiketler**\n\n**/tektag sebep - Üyeleri Tek Tek Etiketler**\n\n**/admins sebep - Yöneticileri Tek Tek Tag atar**\n\n**/start - botu başlatır**"
   await event.reply(helptext,
                     buttons=(
                       [Button.url('Beni Gruba Ekle➕', 'https://t.me/alitaggerbot?startgroup=a')],
