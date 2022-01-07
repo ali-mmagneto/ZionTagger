@@ -87,7 +87,7 @@ async def mentionall(event):
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu komutu sadace yoneticiler kullanabilir〽️**")
+    return await event.respond("**Bu komutu sadece yöneticiler kullanabilir〽️**")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
